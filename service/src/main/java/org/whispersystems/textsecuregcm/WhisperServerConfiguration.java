@@ -27,7 +27,6 @@ import org.whispersystems.textsecuregcm.configuration.DirectoryV2Configuration;
 import org.whispersystems.textsecuregcm.configuration.DynamoDbClientConfiguration;
 import org.whispersystems.textsecuregcm.configuration.DynamoDbTables;
 import org.whispersystems.textsecuregcm.configuration.FcmConfiguration;
-import org.whispersystems.textsecuregcm.configuration.GcpAttachmentsConfiguration;
 import org.whispersystems.textsecuregcm.configuration.GiftConfiguration;
 import org.whispersystems.textsecuregcm.configuration.MaxDeviceConfiguration;
 import org.whispersystems.textsecuregcm.configuration.MessageCacheConfiguration;
@@ -77,11 +76,6 @@ public class WhisperServerConfiguration extends Configuration {
   @Valid
   @JsonProperty
   private AwsAttachmentsConfiguration awsAttachments;
-
-  @NotNull
-  @Valid
-  @JsonProperty
-  private GcpAttachmentsConfiguration gcpAttachments;
 
   @NotNull
   @Valid
@@ -289,9 +283,6 @@ public class WhisperServerConfiguration extends Configuration {
     return awsAttachments;
   }
 
-  public GcpAttachmentsConfiguration getGcpAttachmentsConfiguration() {
-    return gcpAttachments;
-  }
 
   public RedisClusterConfiguration getCacheClusterConfiguration() {
     return cacheCluster;

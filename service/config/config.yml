@@ -66,18 +66,18 @@ cacheCluster: # Redis server configuration for cache cluster
   configurationUri: redis://redis.example.com:6379/
 
 clientPresenceCluster: # Redis server configuration for client presence cluster
-  configurationUri: redis://redis.example.com:6379/
+  configurationUri: redis://127.0.0.1:6379/
 
 pubsub: # Redis server configuration for pubsub cluster
-  url: redis://redis.example.com:6379/
+  url: redis://127.0.0.1:6379/
   replicaUrls:
-    - redis://redis.example.com:6379/
+    - redis://127.0.0.1:6379/
 
 pushSchedulerCluster: # Redis server configuration for push scheduler cluster
-  configurationUri: redis://redis.example.com:6379/
+  configurationUri: redis://127.0.0.1:6379/
 
 rateLimitersCluster: # Redis server configuration for rate limiters cluster
-  configurationUri: redis://redis.example.com:6379/
+  configurationUri: redis://127.0.0.1:6379/
 
 directory:
   client: # Configuration for interfacing with Contact Discovery Service cluster
@@ -135,41 +135,6 @@ awsAttachments: # AWS S3 configuration
   bucket: aws-attachments
   region: us-west-2
 
-gcpAttachments: # GCP Storage configuration
-  domain: example.com
-  email: user@example.cocm
-  maxSizeInBytes: 1024
-  pathPrefix:
-  rsaSigningKey: |
-    -----BEGIN PRIVATE KEY-----
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
-    AAAAAAAA
-    -----END PRIVATE KEY-----
-
 accountDatabaseCrawler:
   chunkSize: 10           # accounts per run
   chunkIntervalMs: 60000  # time per run
@@ -188,7 +153,7 @@ apn: # Apple Push Notifications configuration
     -----END PRIVATE KEY-----
 
 fcm: # FCM configuration
-  credentials: |
+  credentials: |+
     { "json": true }
 
 cdn:
@@ -246,7 +211,7 @@ backupService:
   uri: backup.example.com
   userAuthenticationTokenSharedSecret: 00000f
   backupCaCertificates:
-    - |
+    - |6
       -----BEGIN CERTIFICATE-----
       ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
       ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789+abcdefghijklmnopqrstuvwxyz
